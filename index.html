@@ -7,51 +7,28 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <section class="requirements" id="top">
-        <h1 style="text-align: center;
-        font-family: sans-serif;
-        font-size: 50px;
-        border-bottom: 3px solid black;">Name Goes Here</h1>
-        <h1 style="background-color: yellow;">Self Introduction</h1>
-        <p style="font-size: 20px;">- I am <i>(name)</i> from class <b>(class)</b></p>
-        <h1 style="background-color: yellowgreen;">My Hobbies</h1>
-        <ul style="font-size: 20px;">
-            <li>Programming</li>
-            <li>Gaming</li>
-        </ul>
-        <img src="computer-cartoon-img.jpg" alt="Computer Image" width="80px" style="position: absolute; top: 280px; left: 180px;">
-        <table border="2" style="font-size: 20px; padding: 3px; width: 100%; text-align: center;">
-            <tr style="height: 30px;">
-                <td style="background-color: yellow; width: 25%;">My Favourite things</td>
-                <td style="background-color: gold; width: 25%;">1st</td>
-                <td style="background-color: silver; width: 25%;">2nd</td>
-                <td style="background-color: brown;">3rd</td>
-            </tr>
-            <tr>
-                <td>Subjects</td>
-                <td>ICT <img src="118556689-laptop-a-vector-cartoon-illustration-of-a-computer-laptop.jpg" height="20px"></td>
-                <td>Physics <img src="atom-icon-cartoon-style-vector-16246940.jpg" height="20px"></td>
-                <td>Chemistry <img src="test_tube_img.jpg" height="20px"></td>
-            </tr>
-            <tr>
-                <td>Programming Language</td>
-                <td><a href="https://www.w3schools.com/python/default.asp">Python</a></td>
-                <td><a href="https://www.w3schools.com/js/">JavaScript</a></td>
-                <td>/</td>
-            </tr>
-        </table>
-    </section>
+    
     <ul class="navigation">
-        <li class="navigation-block"><a href="#top" class="navigation-link">Top</a></li>
+        <li class="navigation-block"><a href="#parallax_scrolling" class="navigation-link">Parallax Scrolling</a></li>
         <li class="navigation-block"><a href="#genshin_bookmark" class="navigation-link">Genshin</a></li>
         <li class="navigation-block"><a href="#honkai_star_rail_profile" class="navigation-link">HSR</a></li>
+        <li class="navigation-block"><a href="#textbox" class="navigation-link">Text Box</a></li>
     </ul>
+
+    <section class="parallax-scrolling" id="parallax_scrolling">
+        <img src="assets/stars_background.jpg" id="stars_background">
+        <img src="assets/moon-58-1024x1024.png" id="moon">
+        <img src="assets/spaceship.webp" id="spaceship">
+        <img src="assets/spaceship2.png" id="spaceship2">
+    </section>
+
     <section class="genshin-background centered" id="genshin_bookmark">
         <div class="genshin trigger-slide-in-left">
             <h1 style="margin: 0; text-align: center; padding-top: 50px; font-size: 50px;">Genshin Profile</h1>
             <div class="genshin-character-container">
-                <button onclick="return genshin_prev_page()" style="font-size: 10vw; z-index: 1;" id="genshin_character_prev"><</button>
-                <button onclick="return genshin_next_page()" style="font-size: 10vw; z-index: 1;right: 0; position: absolute;" id="genshin_character_next">></button>
+                <button onclick="return genshin_prev_page()" style="font-size: 10vw; z-index: 1; position: relative; left: 10px;" id="genshin_character_prev"><</button>
+                <button onclick="return genshin_next_page()" style="font-size: 10vw; z-index: 1; position: absolute; right: 0;" id="genshin_character_next">></button>
+                
                 <div class="genshin-characters" id="genshin_characters">
                     <img src="assets/Screenshot 2023-09-22 205948.jpg" class="genshin-character-image">
                     <img class="genshin-character-image" alt="Ganyu" src="assets/GanyuWeapon.jpg" role="button" onclick="on_genshin_character_flip(this, this.src)">
@@ -66,6 +43,7 @@
                     <img class="genshin-character-image" alt="Yelan" src="assets/YelanWeapon.jpg" role="button" onclick="on_genshin_character_flip(this, this.src)">
                     <img class="genshin-character-image" alt="Zhongli" src="assets/ZhongliWeapon.jpg" role="button" onclick="on_genshin_character_flip(this, this.src)">
                 </div>
+                
                 
             </div>
             <p style="text-align: center;font-size: 20px; margin: 1px;">Click to flip</p>
@@ -82,7 +60,7 @@
                 <input type="radio" class="page-selector" name="genshin-paginator" value = "9" onclick="on_genshin_page_change(this.value)">
                 <input type="radio" class="page-selector" name="genshin-paginator" value = "10" onclick="on_genshin_page_change(this.value)">
                 <input type="radio" class="page-selector" name="genshin-paginator" value = "11" onclick="on_genshin_page_change(this.value)">
-            </div>
+            </form>
 
             
         </div>
@@ -98,10 +76,28 @@
         <div class="hsr trigger-slide-in-right">
             <h1 style="margin: 0; text-align: center; padding-top: 50px; font-size: 50px;">Honkai Star Rail Profile</h1>
             <img src="assets/Screenshot 2023-09-24 092234.jpg" width="80%">
-            <p style="font-size: 2em; color: white;">Running out of ideas on what to add</p>
+            <p style="font-size: 2em; color: white;">Running out of ideas on what to add lol</p>
         
         </div>
     </section>
+
+    <section class="comments-background" id="textbox">
+        <div class="curve">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="comments-container">
+            <div id="comments_display" class="comments-display", style="height: 70vh; width: 100%; background-color: black;"></div>
+            
+            
+            <form onsubmit="return comments_submit()">
+                <input type="text" placeholder="input..." style="background-color: black; color: white; width: 100%; height: 30px; border: white solid 1px;; padding: 0;" id="comments_input">
+            </form>
+        </div>
+        
+    </section>
+    
     
     <script src="script.js"></script>
     

@@ -115,3 +115,43 @@ function on_genshin_page_change(value){
     genshin_pic_num = value;
 }
 
+window.addEventListener("scroll", function(){
+    let value = this.window.scrollY
+    let stars_background = this.document.getElementById("stars_background");
+    let moon_img = this.document.getElementById("moon")
+    let spaceship_img = this.document.getElementById("spaceship")
+    let spaceship2_img = this.document.getElementById("spaceship2")
+
+    stars_background.style.left = -value*0.25 + "px";
+    moon_img.style.top = 10 + value/15 + "vh";
+    spaceship_img.style.left = value*0.5+"px";
+    spaceship_img.style.top = 20 + value/15+"vh";
+    spaceship2_img.style.left = value+"px";
+    spaceship2_img.style.top = 90 - value/30+"vh";
+})
+
+
+function comments_submit(){
+    let inp = document.getElementById("comments_input");
+    let msg = inp.value;
+
+    if (msg == ""){
+        return false;
+    }
+
+    inp.value = "";
+
+    const para = document.createElement("p");
+    const node = document.createTextNode(msg);
+    para.appendChild(node);
+    para.style.whiteSpace = "pre-wrap";
+    para.style.paddingLeft = "10px";
+    para.style.margin = "10px";
+    
+
+
+    let display = document.getElementById("comments_display");
+    display.appendChild(para);
+    display.scrollTop = display.scrollHeight;
+    return false;
+}

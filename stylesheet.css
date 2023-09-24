@@ -1,7 +1,7 @@
 html{
-    width: 100vw;
+    height: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-x: visible;
 }
 *::after{
     box-sizing: inherit;
@@ -15,18 +15,10 @@ body{
 
 section{
     min-height: 100vh;
+    width: 100%;
     position: relative;
     padding: 10px;
 }
-
-
-
-.requirements{
-    background: linear-gradient(10deg, darkgreen, lightgreen);
-    margin: 0;
-}
-
-
 
 
 
@@ -67,18 +59,52 @@ section{
     font-size: 30px;
 }
 
+.parallax-scrolling{
+    padding: 0;
+}
+
+
+.parallax-scrolling img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.parallax-scrolling img#stars_background{
+    width: 200%;
+}
+.parallax-scrolling img#moon{
+    height: 150px;
+    width: 150px;
+    top: 10vh;
+    left: 50vw;
+}
+.parallax-scrolling img#spaceship{
+    height: 100px;
+    width: 125px;
+    top: 20vh;
+}
+.parallax-scrolling img#spaceship2{
+    height: 150px;
+    width: 150px;
+    top: 90vh;
+}
+
+
 
 
 .genshin-background{
     background: linear-gradient(45deg, lightblue, darkblue);
-    position: relative;
 }
 
 
 
 @keyframes slideInLeft {
     from {
-        transform: translateX(-50vw);
+        transform: translateX(-20vw);
     }
     to {
         transform: translateX(0);
@@ -87,7 +113,7 @@ section{
 
 @keyframes slideInRight {
     from {
-        transform: translateX(50vw);
+        transform: translateX(20vw);
     }
     to {
         transform: translateX(0);
@@ -102,10 +128,19 @@ section{
     animation: slideInRight 1.5s ease-out 0s 1 forwards;
 }
 
+.genshin-background::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(0deg, darkblue, transparent);
+    width: 100%;
+    height: 100px;
+    top: -100px;
+}
+
 .genshin-character-container{
     display: flex;
     align-items: center;
-    gap: 1vw;
+    gap: 2vw;
 }
 
 .genshin-characters{
@@ -164,3 +199,45 @@ section{
     flex-direction: column;
     align-items: center;
 }
+
+.comments-background{
+    background: radial-gradient(gold, darkgreen);
+    display: grid;
+    justify-items: center;
+}
+
+.curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(113% + 1.3px);
+    height: 70px;
+}
+
+.curve .shape-fill {
+    fill: purple;
+}
+
+.comments-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.comments-display{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
